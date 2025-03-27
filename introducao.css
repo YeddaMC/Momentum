@@ -2,10 +2,10 @@
    RESET BÁSICO
    Remove margens e preenchimentos padrões do navegador
    ============================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+   * {
+    margin: 0; /* Remove todas as margens padrão */
+    padding: 0; /* Remove todos os preenchimentos padrão */
+    box-sizing: border-box; /* Inclui bordas e preenchimento no cálculo do tamanho total */
 }
 
 /* ==============================
@@ -13,125 +13,153 @@
    Define fonte, cores de fundo e alinhamento do texto
    ============================== */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Define a fonte geral */
     background-color: #E5E5E5; /* Cor de fundo cinza claro */
     color: #1B365D; /* Cor do texto azul-marinho */
-    text-align: center;
+    text-align: center; /* Centraliza o texto do corpo */
 }
 
 /* ==============================
    NAVBAR FIXA E RESPONSIVA
    ============================== */
 .navbar {
-    position: fixed; /* Mantém a navbar fixa no topo */
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: fixed; /* Mantém a barra fixa no topo */
+    top: 0; /* Alinha ao topo da página */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* A navbar ocupa toda a largura */
     background-color: #2E4A7B; /* Azul-marinho mais claro */
-    padding: 10px 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000; /* Garante que a navbar fique sempre acima */
+    padding: 10px 20px; /* Adiciona espaçamento interno */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Cria uma sombra suave */
+    display: flex; /* Estabelece o layout flexível */
+    justify-content: space-between; /* Espaça os itens da navbar */
+    align-items: center; /* Alinha os itens verticalmente */
+    z-index: 1000; /* Garante que esteja acima de outros elementos */
 }
 
 /* Ícone da Home */
 .home-icon {
-    width: 40px; /* Define tamanho do ícone */
-    height: auto;
+    width: 40px; /* Define largura do ícone */
+    height: auto; /* Mantém a proporção da altura */
+    cursor: pointer; /* Indica que o ícone é clicável */
+}
+
+/* Estilização do ícone da navbar */
+.navbar .home-link i {
+    color: white; /* Cor do ícone branca */
+    font-size: 24px; /* Tamanho do ícone */
     cursor: pointer; /* Torna o ícone clicável */
+}
+
+/* Estilização do ícone de imagem (PNG) */
+.home-icon {
+    width: 70px; /* Define largura do ícone */
+    height: auto; /* Mantém a proporção */
+    cursor: pointer; /* Torna a imagem clicável */
+}
+.home-link {
+    color: white; /* Links com cor branca */
+    text-decoration: none; /* Remove sublinhados dos links */
+    font-size: 1 rem; /* Tamanho da fonte dos links */
+    font-weight: bold; /* Deixa o texto em negrito */
+    padding: 8px 12px;
+    transition: 0.6s; /* Cria uma transição suave ao passar o mouse */
+}
+
+.home-link:hover {
+    
+        background-color: #3b755b; /* Cor do fundo muda ao passar o mouse */
+        border-radius: 5px; /* Arredonda os cantos */
+    
 }
 
 /* MENU PADRÃO - Itens do menu */
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px; /* Espaço entre os itens */
+    list-style: none; /* Remove os marcadores da lista */
+    display: flex; /* Alinha os links horizontalmente */
+    gap: 15px; /* Espaçamento entre os links */
 }
 
 .nav-links li {
-    display: inline;
+    display: inline; /* Exibe os itens como elementos em linha */
 }
 
 /* Estilização dos links do menu */
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 8px 12px;
-    transition: 0.3s; /* Efeito suave ao passar o mouse */
+    color: white; /* Links com cor branca */
+    text-decoration: none; /* Remove sublinhados dos links */
+    font-size: 1rem; /* Tamanho da fonte dos links */
+    font-weight: bold; /* Deixa o texto em negrito */
+    padding: 8px 12px; /* Adiciona espaçamento interno */
+    transition: 0.3s; /* Cria uma transição suave ao passar o mouse */
 }
 
 .nav-links a:hover {
-    background-color: #2D6A4F; /* Muda a cor ao passar o mouse */
-    border-radius: 5px;
+    background-color: #2D6A4F; /* Cor do fundo muda ao passar o mouse */
+    border-radius: 5px; /* Arredonda os cantos */
 }
 
 /* BOTÃO DE MENU (Hambúrguer) PARA TELAS PEQUENAS */
 .menu-toggle {
     display: none; /* Esconde o botão em telas grandes */
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
+    font-size: 2rem; /* Define o tamanho da fonte do botão */
+    color: white; /* Deixa o botão na cor branca */
+    cursor: pointer; /* Indica que é clicável */
 }
 
 /* ==============================
    AJUSTE DO CONTEÚDO PRINCIPAL
    ============================== */
 main {
-    width: 80%;
-    margin: auto;
-    padding: 100px 20px 20px; /* Espaço para não ficar escondido atrás da navbar */
+    width: 80%; /* Define largura máxima do conteúdo */
+    margin: auto; /* Centraliza o conteúdo */
+    padding: 100px 20px 20px; /* Espaçamento, com 100px no topo para evitar sobreposição da navbar */
 }
 
 /* ==============================
    VÍDEO CENTRALIZADO E RESPONSIVO
    ============================== */
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
-    height: 0;
-    overflow: hidden;
-    max-width: 90%;
-    margin: 30px auto;
+    position: relative; /* Necessário para o dimensionamento do iframe */
+    padding-bottom: 56.25%; /* Proporção de 16:9 para o vídeo */
+    height: 0; /* Altura inicial é zero */
+    overflow: hidden; /* Garante que o vídeo não saia da área */
+    max-width: 90%; /* Define largura máxima */
+    margin: 30px auto; /* Centraliza o vídeo */
 }
 
 .video-container iframe {
-    position: absolute;
+    position: absolute; /* O iframe ocupa toda a área do container */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Preenche toda a largura do container */
+    height: 100%; /* Preenche toda a altura do container */
 }
 
 /* ==============================
    RESPONSIVIDADE - TELAS PEQUENAS
    ============================== */
 @media (max-width: 768px) {
-    /* MENU RESPONSIVO */
     .nav-links {
-        display: none; /* Oculta o menu padrão */
-        flex-direction: column; /* Empilha os links verticalmente */
-        background-color: #2E4A7B;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        text-align: center;
+        display: none; /* Esconde o menu padrão em telas menores */
+        flex-direction: column; /* Alinha os links verticalmente */
+        background-color: #2E4A7B; /* Fundo azul-marinho */
+        position: absolute; /* Posiciona o menu na tela */
+        top: 60px; /* Ajusta a posição vertical */
+        left: 0; /* Posiciona no lado esquerdo */
+        width: 100%; /* O menu ocupa toda a largura */
+        text-align: center; /* Centraliza o texto */
     }
 
     .nav-links.active {
-        display: flex; /* Mostra o menu quando ativado */
+        display: flex; /* Mostra o menu ao ativar */
     }
 
     .nav-links li {
-        padding: 10px;
+        padding: 10px; /* Adiciona espaçamento aos itens do menu */
     }
 
     .menu-toggle {
-        display: block; /* Exibe o botão de menu em telas menores */
+        display: block; /* Mostra o botão hambúrguer em telas menores */
     }
 }
 
@@ -139,34 +167,52 @@ main {
    SEÇÃO DE MOMENTUM
    ============================== */
 .momentum-info {
-    width: 80%;
-    margin: 40px auto;
-    padding: 20px;
-    background: #f4f4f4; /* Fundo cinza claro para destacar */
+    width: 80%; /* Define largura da seção */
+    margin: 40px auto; /* Centraliza a seção com espaçamento */
+    padding: 20px; /* Adiciona espaçamento interno */
+    background: #f4f4f4; /* Fundo cinza claro */
     border-left: 5px solid #2E4A7B; /* Barra lateral azul-marinho */
-    border-radius: 8px;
-    text-align: left;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Arredonda os cantos */
+    text-align: left; /* Alinha o texto à esquerda */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
 }
 
 .momentum-info h2 {
     color: #2E4A7B; /* Azul-marinho */
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.5rem; /* Tamanho da fonte do título */
+    margin-bottom: 10px; /* Espaçamento inferior */
 }
 
 .momentum-text {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.6;
+    font-size: 1rem; /* Tamanho da fonte do texto */
+    color: #333; /* Cor cinza escura */
+    line-height: 1.6; /* Define espaçamento entre linhas */
 }
 
+/* ==============================
+   RODAPÉ
+   ============================== */
 footer {
-    background-color: #1B365D; /* Azul-marinho */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative; /* Fica no final do conteúdo */
-    bottom: 0;
-    width: 100%;
+    background-color: #1B365D; /* Fundo azul-marinho */
+    color: white; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+    padding: 10px 0; /* Espaçamento interno */
+    position: relative; /* Garante que fique no final */
+    bottom: 0; /* Ajusta a posição do rodapé */
+    width: 100%; /* Ocupa toda a largura */
 }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 2px solid navy;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: lightsteelblue;
+  }
