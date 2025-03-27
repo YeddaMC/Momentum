@@ -207,3 +207,8 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.referencias a {
+    color: #1B365D; /* Azul-marinho */
+    text-decoration: underline; /* Adiciona um sublinhado */
+    font-weight: bold;
+}
