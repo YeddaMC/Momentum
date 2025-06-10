@@ -1,28 +1,27 @@
 /* ==============================
-   RESET BÁSICO
-   Remove margens e preenchimentos padrões do navegador
-   ============================== */
-   * {
+    RESET BÁSICO
+    Remove margens e preenchimentos padrões do navegador
+    ============================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /* ==============================
-   ESTILIZAÇÃO GERAL
-   Define fonte, cores de fundo e alinhamento do texto
-   ============================== */
+    ESTILIZAÇÃO GERAL
+    Define fonte, cores de fundo e alinhamento do texto
+    ============================== */
 body {
     font-family: 'Montserrat', sans-serif;
-
     background-color: #E5E5E5; /* Cor de fundo cinza claro */
     color: #1B365D; /* Cor do texto azul-marinho */
     text-align: center;
 }
 
 /* ==============================
-   NAVBAR FIXA E RESPONSIVA
-   ============================== */
+    NAVBAR FIXA E SEMPRE EXPANDIDA
+    ============================== */
 .navbar {
     position: fixed; /* Mantém a navbar fixa no topo */
     top: 0;
@@ -32,27 +31,29 @@ body {
     padding: 10px 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para efeito elevado */
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza os links na navbar */
     align-items: center;
     z-index: 1000; /* Garante que a navbar fique acima dos outros elementos */
 }
 
-/* Ícone da home */
+/* Ícone da home (se houver, mantido para compatibilidade, mas não está no HTML fornecido) */
 .home-icon {
     width: 40px; /* Define tamanho do ícone */
     height: auto;
     cursor: pointer; /* Torna o ícone clicável */
 }
 
-/* MENU PADRÃO - Itens do menu */
+/* LINKS DO MENU - SEMPRE VISÍVEIS */
 .nav-links {
     list-style: none;
-    display: flex;
-    gap: 20px;
+    display: flex; /* Sempre visível e lado a lado */
+    gap: 20px; /* Espaçamento entre os links */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas muito pequenas */
+    justify-content: center; /* Centraliza os links se eles quebrarem a linha */
 }
 
 .nav-links li {
-    display: inline;
+    display: inline-block; /* Garante que os itens se comportem como blocos em linha */
 }
 
 /* Estilização dos links do menu */
@@ -70,17 +71,14 @@ body {
     border-radius: 5px;
 }
 
-/* BOTÃO DE MENU (Hambúrguer) PARA TELAS PEQUENAS */
+/* BOTÃO DE MENU (Hambúrguer) - SEMPRE OCULTO */
 .menu-toggle {
-    display: none; /* Esconde o botão em telas grandes */
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
+    display: none; /* Oculta o botão de hambúrguer em todas as telas */
 }
 
 /* ==============================
-   AJUSTE DO CONTEÚDO PRINCIPAL
-   ============================== */
+    AJUSTE DO CONTEÚDO PRINCIPAL
+    ============================== */
 main {
     width: 80%;
     margin: auto;
@@ -88,8 +86,8 @@ main {
 }
 
 /* ==============================
-   IMAGEM CENTRALIZADA
-   ============================== */
+    IMAGEM CENTRALIZADA
+    ============================== */
 .image-container {
     margin: 30px auto;
 }
@@ -104,8 +102,8 @@ main {
 }
 
 /* ==============================
-   SEÇÕES (REFERÊNCIAS E EQUIPE)
-   ============================== */
+    SEÇÕES (REFERÊNCIAS E EQUIPE)
+    ============================== */
 .referencias, .equipe {
     margin-top: 30px;
     padding: 15px;
@@ -113,6 +111,7 @@ main {
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .equipe p {
     font-size: 1.1rem;
     margin: 5px 0;
@@ -122,20 +121,13 @@ main {
     color: #1B365D; /* Azul-marinho */
     text-decoration: none;
     font-weight: bold;
-   transition: color 0.10s ease; /* Efeito suave na mudança de cor */
+    transition: color 0.10s ease; /* Efeito suave na mudança de cor */
 }
-
 
 .equipe a:hover {
     color: #2D6A4F; /* Verde ao passar o mouse */
     text-decoration: underline; /* Mantém o sublinhado ao passar o mouse */
 }
-
-
-.equipe a:hover {
-    text-decoration: underline; /* Sublinhar ao passar o mouse */
-}
-
 
 h3 {
     margin-bottom: 10px;
@@ -149,55 +141,15 @@ p {
 }
 
 /* LINKS DENTRO DAS SEÇÕES */
-a {
-    color: white; /* Verde-escuro */
-    text-decoration: none;
+.referencias a { /* Mantenha a cor e sublinhado para links de referência */
+    color: #1B365D; /* Azul-marinho */
+    text-decoration: underline; /* Adiciona um sublinhado */
     font-weight: bold;
 }
 
-a:hover {
-    text-decoration: underline; /* Sublinhar ao passar o mouse */
-}
-
 /* ==============================
-   RESPONSIVIDADE - TELAS PEQUENAS
-   ============================== */
-@media (max-width: 768px) {
-    /* MENU RESPONSIVO */
-    .nav-links {
-        display: none; /* Oculta o menu padrão */
-        flex-direction: column; /* Empilha os links verticalmente */
-        background-color: #1B365D;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links.active {
-        display: flex; /* Mostra o menu quando ativado */
-    }
-
-    .nav-links li {
-        padding: 10px;
-      
-    }
-
-    .menu-toggle {
-        display: block; /* Exibe o botão de menu em telas menores */
-    }
-
-    /* Ajuste para evitar sobreposição com navbar */
-    main {
-        width: 95%;
-        padding: 120px 20px 20px;
-    }
-}
-
-/* ==============================
-   ESTILO DO FOOTER
-   ============================== */
+    ESTILO DO FOOTER
+    ============================== */
 footer {
     background-color: #1B365D; /* Azul-marinho */
     color: white;
@@ -206,9 +158,4 @@ footer {
     position: relative; /* Fica no final do conteúdo */
     bottom: 0;
     width: 100%;
-}
-.referencias a {
-    color: #1B365D; /* Azul-marinho */
-    text-decoration: underline; /* Adiciona um sublinhado */
-    font-weight: bold;
 }
